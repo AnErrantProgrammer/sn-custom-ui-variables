@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <script>
+        function setVariable(){
+            var field = document.getElementById('something');
+            passVariable.setVariable(field.name, field.value);
+        }
+
+        function acceptDialog(){
+            gsftSubmit(null, g_form.getFormElement(), 'pass_variable');
+        }
+    </script>
+
+    <div class="col-md-12">
+        <div class="row">
+            <p>Some Instructions...</p>
+        </div>
+        <div class="row">
+            <g:ui_reference class="text"
+                            name="something"
+                            id="something"
+                            table="incident"
+                            size="50" />
+        </div>
+        <div class="row">
+            <button class="btn btn-warning" onclick="setVariable()">Set Variable</button>
+            <button class="btn btn-primary" onclick="acceptDialog()">Accept</button>
+        </div>
+    </div>
+
+</j:jelly>
